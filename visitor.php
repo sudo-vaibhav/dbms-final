@@ -1,7 +1,8 @@
 <?php 
 require "./header.php";
 ?>
-  <section class="text-gray-700 body-font relative">
+  <div class="flex flex-col h-screen">
+  <section class="text-gray-700 body-font relative flex-grow">
     <div class="container px-5 my-5 mx-auto">
       <div class="flex flex-col text-center w-full mb-12">
         <h1
@@ -52,7 +53,7 @@ require "./header.php";
             />
           </div>
         </div>
-          <div class="p-2 w-full">
+          <div class="p-5 w-full">
             <button
               class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
             >
@@ -66,3 +67,4 @@ require "./header.php";
   <?php 
 require "./footer.php";
 ?>
+</div>
