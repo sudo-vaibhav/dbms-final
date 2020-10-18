@@ -40,6 +40,7 @@
                         <ul class="flex space-x-8 text-sm font-semibold">
                             <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
                             <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
+                            <li><a href="./visitor.php" class="hover:text-indigo-500">Visitor</a></li>
                         </ul>
                     </navbar>
 
@@ -74,6 +75,7 @@
             <ul class="divide-y">
                 <li><a href="./success.php" class="my-4 inline-block active font-bold">Success</a></li>
                 <li><a href="./fir.php" class="my-4 inline-block active font-bold">FIR</a></li>
+                <li><a href="./visitor.php" class="my-4 inline-block active font-bold">Visitor</a></li>
             </ul>
         </div>
     </div><!-- end mobile navbar -->
