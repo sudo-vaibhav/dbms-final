@@ -20,7 +20,7 @@
               d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
             ></path>
           </svg>
-          <span class="ml-3 text-xl">Prison Management System</span>
+          <span class="ml-3 text-xl">Criminal Management System</span>
         </a>
         <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
           © 2020 — Neel, Deepesh & Vaibhav
@@ -33,4 +33,5 @@
       </div>
     </div>
   </footer>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 </body>
