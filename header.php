@@ -41,6 +41,7 @@
                             <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
                             <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
                             <li><a href="./visitor.php" class="hover:text-indigo-500">Visitor</a></li>
+                            <li><a href="./login.php" class="hover:text-indigo-500">Login</a></li>
                         </ul>
                     </navbar>
 
@@ -76,6 +77,7 @@
                 <li><a href="./success.php" class="my-4 inline-block active font-bold">Success</a></li>
                 <li><a href="./fir.php" class="my-4 inline-block active font-bold">FIR</a></li>
                 <li><a href="./visitor.php" class="my-4 inline-block active font-bold">Visitor</a></li>
+                <li><a href="./login.php" class="my-4 inline-block active font-bold">Login</a></li>
             </ul>
         </div>
     </div><!-- end mobile navbar -->
