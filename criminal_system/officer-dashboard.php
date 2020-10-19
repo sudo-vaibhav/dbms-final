@@ -16,7 +16,7 @@
 //update prisoner date_out
 //update fir (add a prisoner id)
 
-    if(isset($_SESSION['userUid'])){
+    if(isset($_SESSION['userUidOfficer'])){
       echo'<section class="text-gray-700 body-font">
       <div class="container px-5 py-24 mx-auto">
         <div class="font-medium title-font text-center text-gray-900 mb-20">

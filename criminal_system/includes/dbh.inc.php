@@ -1,5 +1,5 @@
 <?php
-/*
+
 $servername="localhost";
 $dBUsername="root";
 $dBPassword="";
@@ -10,8 +10,8 @@ if(!$conn){
     die("Connection failed:".mysqli_connect_error());
     //closes the connection and prints the error
 }
-*/
 
+/*
 
 $conn=mysqli_init(); 
 mysqli_ssl_set($conn, NULL, NULL, {ca-cert filename}, NULL, NULL);
@@ -23,3 +23,4 @@ if(!$conn){
 //password: Password@123
 //username: mysql@dbms-sql
 
+*/

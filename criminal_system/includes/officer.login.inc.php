@@ -27,7 +27,7 @@ if(isset($_POST['officer_login-submit'])){
                     }else if($pwdCheck==true){
                         session_start();
                         //$_SESSION['userId']=$row['Officer_id'];
-                        $_SESSION['userUid']=$row['Officer_uname'];
+                        $_SESSION['userUidOfficer']=$row['Officer_uname'];
 
                         header("Location: ../officer-dashboard.php?login=success");
                         exit();

@@ -2,4 +2,9 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../signin-officer.php");
+if($_GET['logout']=="officer"){
+    header("Location: ../signin-officer.php");
+}elseif($_GET['logout']=="jailor"){
+    header("Location: ../signin-jailor.php");
+
+}

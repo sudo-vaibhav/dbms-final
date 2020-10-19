@@ -42,10 +42,17 @@ session_start();
                     <navbar class="navbar hidden md:block">
                         <ul class="flex space-x-8 text-sm font-semibold">
                             <?php
-                                if(isset($_SESSION['userUid'])){
-                                      echo'<li><a href="includes/logout.inc.php" class="hover:text-indigo-500">Logout</a></li>
+                                if(isset($_SESSION['userUidOfficer'])){
+                                      echo'<li><a href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
                                       <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
-                                      <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>';  
+                                      <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
+                                    <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                      
+                                }else if(isset($_SESSION['userUidJailor'])){
+                                    echo'<li><a href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
+                                    <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
+                                    <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
+                                  <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
                                 }else{
                                     echo'<li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
 
