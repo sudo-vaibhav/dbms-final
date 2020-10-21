@@ -1,7 +1,8 @@
 <?php 
 require "./header.php";
 ?>
-  <section class="text-gray-700 body-font relative">
+ <div class="flex flex-col h-screen">
+  <section class="text-gray-700 body-font relative flex-grow">
     <div class="container px-5 my-5 mx-auto">
       <div class="flex flex-col text-center w-full mb-12">
         <h1
@@ -106,3 +107,4 @@ require "./header.php";
   <?php 
   require "./footer.php";
   ?>
+  </div>
