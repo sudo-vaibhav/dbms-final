@@ -2,7 +2,7 @@
 require "./header.php";
 ?>
   <div class="flex flex-col h-screen">
-<section class="text-gray-700 body-font relative flex-grow">
+  <section class="text-gray-700 body-font relative flex-grow">
     <div class="container px-5 my-5 mx-auto">
       <div class="flex flex-col text-center w-full mb-12">
         <h1
@@ -36,7 +36,6 @@ require "./header.php";
             />
             </div>
             </div>
-          </div>
         <div class="p-2 w-1/2">
           <label class="block text-sm leading-5 font-medium text-gray-700"
             >Mobile Number</label
