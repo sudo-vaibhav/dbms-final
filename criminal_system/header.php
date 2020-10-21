@@ -44,12 +44,12 @@ session_start();
                             <?php
                                 if(isset($_SESSION['userUidOfficer'])){
                                       echo'<li><a href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
-                                      <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
+                                      <li><a href="./officer-dashboard.php" class="hover:text-indigo-500">Officer dasboard</a></li>
                                     <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
                                       
                                 }else if(isset($_SESSION['userUidJailor'])){
                                     echo'<li><a href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
-                                    <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
+                                    <li><a href="./jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
                                   <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
                                 }else{
                                     echo'<li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
