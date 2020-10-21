@@ -20,16 +20,21 @@ require "./header.php";
             <label class="block text-sm leading-5 font-medium text-gray-700"
               >First Name</label
             >
-            <div class="mt-1 relative rounded-md shadow-sm w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-            placeholder="Jobs">
+            <div class="mt-1 relative rounded-md shadow-sm">
+            <input
+              class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
+            />
             </div>
           </div>
           <div class="p-2 w-1/2">
             <label class="block text-sm leading-5 font-medium text-gray-700"
               >Last Name</label
             >
-            <div class="mt-1 relative rounded-md shadow-sm w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-            placeholder="Jobs">
+            <div class="mt-1 relative rounded-md shadow-sm">
+            <input
+              class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
+            />
+            </div>
             </div>
           </div>
         <div class="p-2 w-1/2">
