@@ -8,7 +8,7 @@ if(isset($_POST['officer_login-submit'])){
         header("Location: ../signin-officer.php?error=emptyFields");
         exit();
     }else{
-        $sql="SELECT Officer_uname,Officer_pwd FROM Officer WHERE Officer_uname=?; ";
+        $sql="SELECT Officer_uname,Officer_pwd FROM officer WHERE Officer_uname=?; ";
         $stmt=mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($stmt,$sql)){

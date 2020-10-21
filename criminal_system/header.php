@@ -45,16 +45,16 @@ session_start();
                                 if(isset($_SESSION['userUidOfficer'])){
                                       echo'<li><a href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
                                       <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
-                                      <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
                                     <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
                                       
                                 }else if(isset($_SESSION['userUidJailor'])){
                                     echo'<li><a href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
                                     <li><a href="./success.php" class="hover:text-indigo-500">Success</a></li>
-                                    <li><a href="./fir.php" class="hover:text-indigo-500">FIR</a></li>
                                   <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
                                 }else{
                                     echo'<li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                    echo'<li><a href="./signin-officer.php" class="hover:text-indigo-500">Officer Login</a></li>';
+                                    echo'<li><a href="./signin-jailor.php" class="hover:text-indigo-500">Jailor Login</a></li>';
 
                                 }
                             

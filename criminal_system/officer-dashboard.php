@@ -36,7 +36,7 @@
             <div class="flex-grow pl-6">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-2">File an FIR</h2>
               <p class="leading-relaxed text-base">First Information Report (FIR) is a written document prepared by the police when they receive information about the commission of a cognizable offence.</p>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">File FIR
+              <a class="mt-3 text-indigo-500 inline-flex items-center" href="./fir.php">File FIR
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
@@ -52,9 +52,9 @@
               </svg>
             </div>
             <div class="flex-grow pl-6">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Update Information</h2>
-              <p class="leading-relaxed text-base">Update information of officer stored in the database.</p>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Update Information
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Add a visitor</h2>
+              <p class="leading-relaxed text-base">Add a visitor .</p>
+              <a class="mt-3 text-indigo-500 inline-flex items-center"href="./visitor.php">Add Visitor
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
