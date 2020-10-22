@@ -38,29 +38,45 @@ echo'
           <div class="p-2 w-1/2">
           
             <label class="block text-sm leading-5 font-medium text-gray-700"
-              >Prisoner ID</label
+              >Jailor ID</label
             >
             <div class="mt-1 relative rounded-md shadow-sm >
             placeholder="Jobs">
             <input
-              name="add_pid"
+              name="jailor_id"
               class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-              placeholder="Prisoner ID"
+              placeholder="Jailor ID"
             />
               
             </div>
           </div>
+          
+          
           <div class="p-2 w-1/2">
           <label
             for="price"
             class="block text-sm leading-5 font-medium text-gray-700"
-            >Date Out</label
+            >New Section ID</label
           >
           <div class="mt-1 relative rounded-md shadow-sm">
             <input
-            name="date_out"
+            name="section_id"
               class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-              type="date"
+              placeholder="New Section ID"
+            />
+          </div>
+        </div>
+        <div class="p-2 w-1/2 align-center">
+          <label
+            for="price"
+            class="block text-sm leading-5 font-medium text-gray-700"
+            >New Section ID</label
+          >
+          <div class="mt-1 relative rounded-md shadow-sm">
+            <input
+            name="section_id"
+              class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
+              placeholder="New Section ID"
             />
           </div>
         </div>
@@ -70,7 +86,7 @@ echo'
           
           <div class="p-5 w-full">
             <button
-            name="update_dateout" type="submit"
+            name="update_jailor" type="submit"
               class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
             >
               Submit

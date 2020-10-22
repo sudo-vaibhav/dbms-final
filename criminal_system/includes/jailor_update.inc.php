@@ -1,8 +1,9 @@
 <?php
-    if(isset($_POST['update_dateout'])){
+    if(isset($_POST['update_jailor'])){
         require'./dbh.inc.php';
-        $out_date=$_POST['date_out'];
-        $pid=$_POST['add_pid'];
+        $jailor_id=$_POST['jailor_id'];
+        $sec_name=$_POST['section_name'];
+        $sec_id=$_POST['section_id'];
         echo $out_date."<br>";
         echo $pid;
 
@@ -11,12 +12,12 @@
             exit();
 
             }else{
-                    $sql="UPDATE prisoner SET Date_out='$out_date' WHERE Prisoner_id='$pid' ";
+                    $sql="UPDATE section SET Section_id='$section_id',Section_name='$sec_name' WHERE Jailor_id='$jailor_id' ";
                     if(!mysqli_query($conn,$sql)){
-                        header("Location: ../prisoner_dateout.php?error=sqlerror");
+                        header("Location: ../jailor_update.php?error=sqlerror");
                         exit();
                     }else{
-                        header("Location: ../prisoner_dateout.php?error=success");
+                        header("Location: ../jailor_update.php?error=success");
                     
                         exit();
                     }
