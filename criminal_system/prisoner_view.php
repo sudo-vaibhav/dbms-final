@@ -1,6 +1,6 @@
 <?php
     require 'header.php';
-    if(isset($_SESSION['userUidOfficer'] || $_SESSION['userUidJailor'])){
+    if(isset($_SESSION['userUidOfficer'] )||isset( $_SESSION['userUidJailor'])){
 
     include_once 'includes/dbh.inc.php';
     //require'header.php';

@@ -1,6 +1,6 @@
 <?php
     require '../header.php';
-    if(isset($_SESSION['userUidOfficer'] || $_SESSION['userUidJailor'])){
+    if(isset($_SESSION['userUidOfficer'] )||isset( $_SESSION['userUidJailor'])){
 
     include_once './dbh.inc.php';
     //require'header.php';
@@ -52,8 +52,8 @@
    $result=mysqli_query($conn,$sql);
 
     $resultCheck=mysqli_num_rows($result);
-    echo $resultCheck;
-    print_r($resultCheck);
+    //echo $resultCheck;
+    //print_r($resultCheck);
     if($resultCheck > 0){ ?> 
   <style>.foot{padding-top:55px;}</style>
 
