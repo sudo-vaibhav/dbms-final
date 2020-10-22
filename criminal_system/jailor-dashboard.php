@@ -25,9 +25,9 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">File an FIR</h2>
-                <p class="leading-relaxed text-base">First Information Report (FIR) is a written document prepared by the police when they receive information about the commission of a cognizable offence.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">File FIR
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">View Prisoners</h2>
+                <p class="leading-relaxed text-base">View all the prisoners with section id</p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center" href="./prisoner_view.php">View Prisoners
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
@@ -43,9 +43,9 @@
                 </svg>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Update Information</h2>
-                <p class="leading-relaxed text-base">Update information of Jailor stored in the database.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Update Information
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">View Sections</h2>
+                <p class="leading-relaxed text-base">View all the sections with Jailor id</p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center" href="./section_view.php">View Sections
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
@@ -58,9 +58,9 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Update FIR</h2>
-                <p class="leading-relaxed text-base">Update previously written FIRs. Also use this to add/remove prisoners from a case.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">View Jailors</h2>
+                <p class="leading-relaxed text-base">View all the Jailors</p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center" href="./jailor_view.php">View Jailors
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
@@ -76,33 +76,15 @@
                 </svg>
               </div>
               <div class="flex-grow pl-6">
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Update Information</h2>
-                <p class="leading-relaxed text-base">Update information of officer stored in the database.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">Update Information
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Update Prisoners Section ID</h2>
+                <p class="leading-relaxed text-base">Update section of prisoners stored in the database.</p>
+                <a class="mt-3 text-indigo-500 inline-flex items-center">Update Prisoners Section ID
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
                 </a>
               </div>
-            </div>
-            <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex">
-              <div class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-              </div>
-              <div class="flex-grow pl-6">
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">File an FIR</h2>
-                <p class="leading-relaxed text-base">First Information Report (FIR) is a written document prepared by the police when they receive information about the commission of a cognizable offence.</p>
-                <a class="mt-3 text-indigo-500 inline-flex items-center">File FIR
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-      
+            </div>   
           </div>
         </div>
       </section>';
