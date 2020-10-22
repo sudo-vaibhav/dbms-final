@@ -2,7 +2,7 @@
     if(isset($_POST['visitor_add'])){
         require 'dbh.inc.php';
         
-         $f_name=$_POST['f_name'];
+        $f_name=$_POST['f_name'];
         $l_name=$_POST['l_name'];
         $date_in=$_POST['date_in'];
         $prisoner_id=$_POST['prisoner_id'];
@@ -19,7 +19,7 @@
                     header("Location: ../visitor.php?error=sqlerror");
                     exit();
                 }else{
-                    //hashing the password:
+                    
                     mysqli_stmt_bind_param($stmt,"ssss",$f_name,$l_name,$date_in,$prisoner_id);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../success_visitor.php?insert=success");

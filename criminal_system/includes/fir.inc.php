@@ -28,7 +28,7 @@
                     header("Location: ../fir.php?error=sqlerror");
                     exit();
                 }else{
-                    //hashing the password:
+                    
                     mysqli_stmt_bind_param($stmt1,"sssss",$fir_no,$description,$date_fir,$crime_done,$officer_id);
                     mysqli_stmt_execute($stmt1);
                    // header("Location: ../fir.php?insert=success");
@@ -42,13 +42,44 @@
                     header("Location: ../fir.php?error=sqlerror");
                     exit();
                 }else{
-                    //hashing the password:
+                   
                     mysqli_stmt_bind_param($stmt2,"ssssssss",$f_name,$l_name,$date_in,$dob,$height,$date_out,$addr,$section_id);
                     mysqli_stmt_execute($stmt2);
+                   // header("Location: ../successfir_prisoner.php?insert=success");
+                    //exit();
+
+                }
+                //getting the prioner id from the latest entry in the prisoner table;
+                $sql="SELECT Prisoner_id FROM prisoner ORDER BY Prisoner_id DESC LIMIT 1 ";
+                $result=mysqli_query($conn,$sql);
+                //$resultCheck=mysqli_num_rows($result);
+                //$row=mysqli_fetch_array($result);
+                //print_r($row);
+                //$res = array();
+                //$res=$row[$resultCheck];
+                //echo $resultCheck ."<br>";
+                $res=mysqli_fetch_row($result);
+                //echo $res[0]."<br>";
+                //echo $fir_no ;
+               // echo $res;
+                //inserting firno and prisoner id into against table:
+              
+              $sql3="INSERT INTO against(Fir_no,Prisoner_id) VALUES
+                (?,?) ";
+                $stmt3=mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt3,$sql3)){
+                    header("Location: ../fir.php?error=sqlerror");
+                    exit();
+                }else{
+                    
+                    mysqli_stmt_bind_param($stmt3,"ii",$fir_no,$res[0]);
+                    mysqli_stmt_execute($stmt3);
                     header("Location: ../successfir_prisoner.php?insert=success");
                     exit();
 
                 }
+                           
+
 
         }
     }

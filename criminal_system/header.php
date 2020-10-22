@@ -25,8 +25,8 @@ session_start();
                         <h1 class="font-semibold text-black leading-relaxed"><a href="">CMS</a></h1>
                     </div>
 
-                    <!-- mobile toggle -->
-                    <div class="toggle md:hidden">
+                    <!-- mobile toggle --> 
+                    <div class="toggle md:hidden ">
                         <button @click=" isOpen = true" @keydown.escape=" isOpen = false">
                             <svg 
                                 class="h-6 w-6 fill-current text-black"
@@ -37,7 +37,7 @@ session_start();
                             </svg>
                         </button>
                     </div>
-
+                       
                     <!-- Navbar -->
                     <navbar class="navbar hidden md:block">
                         <ul class="flex space-x-8 text-sm font-semibold">
@@ -96,8 +96,24 @@ session_start();
                 </button>
             </div>
             <ul class="divide-y">
-                <li><a href="./success.php" class="my-4 inline-block active font-bold">Success</a></li>
-                <li><a href="./fir.php" class="my-4 inline-block active font-bold">FIR</a></li>
+            <?php
+                                if(isset($_SESSION['userUidOfficer'])){
+                                      echo'<li><a href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
+                                      <li><a href="./officer-dashboard.php" class="hover:text-indigo-500">Officer dasboard</a></li>
+                                    <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                      
+                                }else if(isset($_SESSION['userUidJailor'])){
+                                    echo'<li><a href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
+                                    <li><a href="./jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
+                                  <li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                }else{
+                                    echo'<li><a href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                    echo'<li><a href="./signin-officer.php" class="hover:text-indigo-500">Officer Login</a></li>';
+                                    echo'<li><a href="./signin-jailor.php" class="hover:text-indigo-500">Jailor Login</a></li>';
+
+                                }
+                            
+                            ?>
             </ul>
         </div>
     </div><!-- end mobile navbar -->
