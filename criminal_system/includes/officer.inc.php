@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST['officer_add'])){
       require 'dbh.inc.php';
-      $officer_id=$_POST['officer_id']; //officer id not defined in the input yet
+     // $officer_id=$_POST['officer_id']; //officer id not defined in the input yet
       $f_name=$_POST['f_name'];
       $l_name=$_POST['l_name'];
       $dob=$_POST['dob'];
@@ -36,27 +36,35 @@
                     exit();
                 }
                 else{
-                  $sql1="INSERT INTO officer (Officer_id, Officer_uname, Officer_pwd, First_name, Last_name, Title, Date_of_birth) VALUES (?,?,?,?,?,?,?) ";
+                  $sql1="INSERT INTO officer (Officer_uname, Officer_pwd, First_name, Last_name, Title, Date_of_birth) VALUES (?,?,?,?,?,?) ";
                           $stmt1=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt1,$sql1)){
                               header("Location: ../officer.php?error=sqlerror");
                               exit();
                           }else{
                               //hashing the password:
-                              mysqli_stmt_bind_param($stmt1,"sssssss",$officer_id,$username,$password,$f_name,$l_name,$title,$dob);
+                              mysqli_stmt_bind_param($stmt1,"ssssss",$username,$password,$f_name,$l_name,$title,$dob);
                               mysqli_stmt_execute($stmt1);
                              // header("Location: ../fir.php?insert=success");
                               //exit();
           
                           }
+                           //getting the officer id of the officer just added:
+                            $sql="SELECT Officer_id FROM officer ORDER BY Officer_id DESC LIMIT 1 ";
+                             $result=mysqli_query($conn,$sql);
+                              $officer_id=mysqli_fetch_row($result);
+                              
+
+
+
                           $sql2="INSERT INTO officer_phone(oficer_phone,officer_id ) VALUES (?,?) ";
                           $stmt2=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt2,$sql2)){
                               header("Location: ../officer.php?error=sqlerror");
                               exit();
                           }else{
-                              //hashing the password:
-                              mysqli_stmt_bind_param($stmt2,"ss",$mob_number,$officer_id);
+                              
+                              mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$officer_id[0]);
                               mysqli_stmt_execute($stmt2);
                               header("Location: ../successofficer.php?insert=success");
                               exit();
