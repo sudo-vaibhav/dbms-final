@@ -10,6 +10,10 @@ if(isset($_SESSION['userUidOfficer'])){
       echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
       sql database connection error!!       
       </h2>';
+    }elseif($_GET['error']=="passwordnotmatched"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
+      Reenter the correct password!!       
+      </h2>';
     }
 
   }
@@ -76,7 +80,7 @@ if(isset($_SESSION['userUidOfficer'])){
             >Password</label
           >
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input
+            <input type="password"
             name="password" class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
             />
           </div>
@@ -86,7 +90,7 @@ if(isset($_SESSION['userUidOfficer'])){
             >Confirm Password</label
           >
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input
+            <input type ="password"
               name= "cfmpassword" class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
             />
           </div>

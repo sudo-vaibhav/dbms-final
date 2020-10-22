@@ -20,7 +20,7 @@
                     exit();
                 }else{
                     
-                    mysqli_stmt_bind_param($stmt,"ssss",$f_name,$l_name,$date_in,$prisoner_id);
+                    mysqli_stmt_bind_param($stmt,"sssi",$f_name,$l_name,$date_in,$prisoner_id);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../success_visitor.php?insert=success");
                     exit();

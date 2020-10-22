@@ -11,15 +11,17 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT * FROM jailor;";
+    $sql="SELECT J.Jailor_id,J.First_name,J.Last_name,JP.Jailor_phone FROM
+     jailor as J INNER JOIN jailor_phone as JP ON J.Jailor_id=JP.Jailor_id ;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
-
+/*
     $sql2="SELECT * FROM jailor_phone;";
-    $result2=mysqli_query($conn,$sql);
+    $result2=mysqli_query($conn,$sql2);
     $resultCheck2=mysqli_num_rows($result2);
-
-    if($resultCheck && $resultCheck2 > 0){?>
+  */
+    // print_r($result2);
+    if(($resultCheck ) > 0){?>
   <style>.foot{padding-top:55px;}</style>
 
   <section class="text-gray-700 body-font relative">
@@ -42,14 +44,21 @@
             </thead>
             <tbody>
         <?php
-         while($row=mysqli_fetch_assoc($result) && $row2=mysqli_fetch_assoc($result2)){ ?>
-            
+        
+
+       // while(($row)&&($row2)){ 
+            while($row=mysqli_fetch_assoc($result)){?>
+                <?php //$row2=mysqli_fetch_assoc($result2);
+               // print_r($row2);
+        //print_r($row);
+                  
+                  ?>
             
               <tr>
-                <td class="border px-4 py-2"><?php echo$row['Jailor_id']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo "JAI".$row['Jailor_id']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['First_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row2['Jailor_phone']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo$row['Jailor_phone']."<br>";?></td>
               </tr>
              
        

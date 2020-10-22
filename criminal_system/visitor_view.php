@@ -45,7 +45,7 @@
                 <td class="border px-4 py-2"><?php echo$row['First_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Visit_date']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row['Prisoner_id']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo"PRI".$row['Prisoner_id']."<br>";?></td>
 
               </tr>
              

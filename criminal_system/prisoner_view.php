@@ -18,13 +18,13 @@
     <div class="mt-1 relative rounded-md shadow-sm">
             <input
               class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-              placeholder="Enter Section id" name="fir_no"
+              placeholder="Enter Section id" name="sec_id"
             />
             </div>
     <div class="mt-1 relative rounded-md shadow-sm">
 
             <button
-            name="sec_id" type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            name="btn" type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
           >
             Submit
           </button>
@@ -69,7 +69,7 @@
             
             
               <tr>
-                <td class="border px-4 py-2"><?php echo$row['Prisoner_id']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo"PRI".$row['Prisoner_id']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['First_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Date_in']."<br>";?></td>

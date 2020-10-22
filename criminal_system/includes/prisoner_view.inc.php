@@ -10,7 +10,7 @@
     }
     $sec_id=$_POST['sec_id'];
     ?>
-    <form action="../prisoner_view.php" method="post">
+<form action="../prisoner_view.php" method="post">
   <section class="text-gray-700 body-font relative">
     
     <div class="container text-center px-5 my-5 mx-auto">
@@ -34,19 +34,27 @@
    // $sece_id=(int)$sec_id;
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT * FROM section WHERE Section_id =?";
+    /*
+      $sql="SELECT * FROM prisoner WHERE Section_id =?";
     $stmt=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
       header("Location: ../prisoner_view.php?error=sqlerror");
       exit();
- }else{
-  mysqli_stmt_bind_param($stmt,"i",$sec_id);
-  mysqli_stmt_execute($stmt);
-  mysqli_stmt_store_result($stmt);
+    }else{
+    mysqli_stmt_bind_param($stmt,"i",$sec_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    */
+    // print_r($stmt);
    // $result=mysqli_query($conn,$sql);
-    $resultCheck=mysqli_stmt_num_rows($stmt);
+     // $sece_id=(int) $sec_id;
+   $sql="SELECT * FROM prisoner WHERE Section_id='$sec_id'";
+   $result=mysqli_query($conn,$sql);
+
+    $resultCheck=mysqli_num_rows($result);
     echo $resultCheck;
-    if($resultCheck > 0){echo'
+    print_r($resultCheck);
+    if($resultCheck > 0){ ?> 
   <style>.foot{padding-top:55px;}</style>
 
   <section class="text-gray-700 body-font relative">
@@ -71,9 +79,9 @@
               </tr>
             </thead>
             <tbody>';
-        
-         while($row=mysqli_fetch_assoc($stmt)){ ?>
-            
+        <?php
+         while($row=mysqli_fetch_assoc($result)){ ?>
+
             
               <tr>
                 <td class="border px-4 py-2"><?php echo$row['Prisoner_id']."<br>";?></td>
@@ -97,7 +105,8 @@
           </table>
 
 
-    <?php }}
+    <?php }
+    //}
    ?>
     </div>
     

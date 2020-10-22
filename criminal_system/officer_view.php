@@ -11,15 +11,16 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT * FROM officer;";
+    $sql="SELECT O.Officer_id,O.First_name,O.Last_name,O.Title,O.Date_of_birth,OP.oficer_phone FROM 
+    officer as O INNER JOIN  officer_phone as OP ON O.Officer_id=OP.officer_id;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
-
+/*
     $sql2="SELECT * FROM officer_phone;";
     $result2=mysqli_query($conn,$sql);
     $resultCheck2=mysqli_num_rows($result2);
-
-    if($resultCheck && $resultCheck2 > 0){?>
+*/
+    if($resultCheck  > 0){?>
   <style>.foot{padding-top:55px;}</style>
 
   <section class="text-gray-700 body-font relative">
@@ -32,28 +33,28 @@
         <table class="table-fixed">
             <thead>
               <tr>
-                <th class="w-1/4 px-5 py-2">Officer ID</th>
-                <th class="w-1/4 px-5 py-2">First Name</th>
-                <th class="w-1/4 px-5 py-2">Last Name</th>
-                <th class="w-1/4 px-5 py-2">Title</th>
-                <th class="w-1/4 px-4 py-2">Date Of Birth</th>
-                <th class="w-1/4 px-4 py-2">Mobile Number</th>
+                <th class="w-1/6 px-7 py-2">Officer ID</th>
+                <th class="w-1/6 px-7 py-2">First Name</th>
+                <th class="w-1/6 px-7 py-2">Last Name</th>
+                <th class="w-1/6 px-7 py-2">Title</th>
+                <th class="w-1/6 px-7 py-2">Date Of Birth</th>
+                <th class="w-1/6 px-7 py-2">Mobile Number</th>
 
 
               </tr>
             </thead>
             <tbody>
         <?php
-         while($row=mysqli_fetch_assoc($result) && $row2=mysqli_fetch_assoc($result2)){ ?>
+         while($row=mysqli_fetch_assoc($result)){ ?>
             
             
               <tr>
-                <td class="border px-4 py-2"><?php echo$row['Officer_id']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo"OFF".$row['Officer_id']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['First_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Title']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row['Date_of_Birth']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row2['oficer_phone']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo$row['Date_of_birth']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo$row['oficer_phone']."<br>";?></td>
               </tr>
              
        
