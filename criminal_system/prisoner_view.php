@@ -36,7 +36,7 @@
 <?php
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT * FROM prisoner ";
+    $sql="SELECT * FROM Prisoner ";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
     if($resultCheck > 0){?>
@@ -59,6 +59,7 @@
                 <th class="w-1/4 px-5 py-2">Date Out</th>
                 <th class="w-1/4 px-5 py-2">Address</th>
                 <th class="w-1/4 px-5 py-2">Section ID</th>
+                <th class="w-1/4 px-5 py-2">Status</th>
 
 
               </tr>
@@ -73,11 +74,13 @@
                 <td class="border px-4 py-2"><?php echo$row['First_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Date_in']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row['DOB']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo$row['Dob']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Height']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Date_out']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Address']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Section_id']."<br>";?></td>
+                
+                <td class="border px-4 py-2"><?php echo$row['Status_inout']."<br>";?></td>
 
               </tr>
              

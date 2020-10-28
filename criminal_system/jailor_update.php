@@ -27,7 +27,7 @@ echo'
         <h1
           class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
         >
-        Update the Out date of a prisoner
+        Update the Section Id and Section Name of the Jailor
         </h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
           Enter the Prisoner ID and the new out date.
@@ -70,11 +70,11 @@ echo'
           <label
             for="price"
             class="block text-sm leading-5 font-medium text-gray-700"
-            >New Section ID</label
+            >New Section Name</label
           >
           <div class="mt-1 relative rounded-md shadow-sm">
             <input
-            name="section_id"
+            name="section_name"
               class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
               placeholder="New Section ID"
             />

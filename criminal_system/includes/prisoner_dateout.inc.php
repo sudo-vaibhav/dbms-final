@@ -11,7 +11,7 @@
             exit();
 
             }else{
-                    $sql="UPDATE prisoner SET Date_out='$out_date' WHERE Prisoner_id='$pid' ";
+                    $sql="UPDATE Prisoner SET Date_out='$out_date' WHERE Prisoner_id='$pid' ";
                     if(!mysqli_query($conn,$sql)){
                         header("Location: ../prisoner_dateout.php?error=sqlerror");
                         exit();

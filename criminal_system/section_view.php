@@ -11,8 +11,7 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT S.Section_id,S.Section_name,S.Jailor_id,P.Prisoner_id  FROM section as S 
-    INNER JOIN  prisoner as P ON S.Section_id=P.Section_id";
+    $sql="SELECT * FROM Section";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
 /*
@@ -36,8 +35,9 @@
                 <th class="w-1/6 px-7 py-2">Section ID</th>
                 <th class="w-1/6 px-7 py-2">Section Name</th>
                 <th class="w-1/6 px-7 py-2">Jailor ID</th>
+                <!--
                 <th class="w-1/6 px-7 py-2">Prisoner ID</th>
-
+-->
 
               </tr>
             </thead>
@@ -50,7 +50,6 @@
                 <td class="border px-4 py-2"><?php echo"SEC".$row['Section_id']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Section_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo"JAI".$row['Jailor_id']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo"PRI".$row['Prisoner_id']."<br>";?></td>
               </tr>
              
        
@@ -72,9 +71,9 @@
   
     
 </section>
-<?
-   $sql="SELECT S.Section_id,S.Section_name,S.Jailor_id,count(P.Prisoner_id) C  FROM section as S 
-    INNER JOIN  prisoner as P ON S.Section_id=P.Section_id";
+<? $in='in';
+   $sql="SELECT S.Section_id,S.Section_name,S.Jailor_id,count(P.Prisoner_id) C  FROM Section as S 
+    INNER JOIN  Prisoner as P ON S.Section_id=P.Section_id AND P.Status_inout='$in'";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
 /*

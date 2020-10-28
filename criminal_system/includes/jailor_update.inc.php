@@ -12,7 +12,7 @@
             exit();
 
             }else{
-                    $sql="UPDATE section SET Section_id='$section_id',Section_name='$sec_name' WHERE Jailor_id='$jailor_id' ";
+                    $sql="UPDATE section SET Section_id='$sec_id',Section_name='$sec_name' WHERE Jailor_id='$jailor_id' ";
                     if(!mysqli_query($conn,$sql)){
                         header("Location: ../jailor_update.php?error=sqlerror");
                         exit();

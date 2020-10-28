@@ -95,6 +95,26 @@ if(isset($_SESSION['userUidOfficer'])){
             />
           </div>
         </div>
+        <div class="p-2 w-1/2">
+        <label class="block text-sm leading-5 font-medium text-gray-700"
+          >Section ID</label
+        >
+        <div class="mt-1 relative rounded-md shadow-sm">
+          <input type ="text"
+            name= "section_id" class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
+          />
+        </div>
+      </div>
+      <div class="p-2 w-1/2">
+      <label class="block text-sm leading-5 font-medium text-gray-700"
+        >Section Name</label
+      >
+      <div class="mt-1 relative rounded-md shadow-sm">
+        <input type ="text"
+          name= "section_name" class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
+        />
+      </div>
+    </div>
           <div class="p-2 w-full">
             <button
             name="jailor_add" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"

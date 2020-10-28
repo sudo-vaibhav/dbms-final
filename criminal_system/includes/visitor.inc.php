@@ -12,7 +12,7 @@
             exit();
         }else{
                 
-                $sql="INSERT INTO visitor(First_name,Last_name,Visit_date,Prisoner_id) VALUES
+                $sql="INSERT INTO Visitor(First_name,Last_name,Visit_date,Prisoner_id) VALUES
                 (?,?,?,?) ";
                 $stmt=mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt,$sql)){

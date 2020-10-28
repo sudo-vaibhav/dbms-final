@@ -12,7 +12,7 @@ if(isset($_SESSION['userUidOfficer'])){
       </h2>';
     }elseif($_GET['error']=="success"){
       echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-green-600">
-      Prisoner added to FIR successfully!!       
+        Updated the dateout of the prisoner successfully !!       
       </h2>';
     }
   }

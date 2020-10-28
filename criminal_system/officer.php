@@ -14,6 +14,10 @@ if(isset($_SESSION['userUidOfficer'])){
       echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
       Reenter correct password!!       
       </h2>';
+    }elseif($_GET['error']=="sameuserexistserror"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
+      Same user exists!!       
+      </h2>';
     }
 
   }

@@ -21,7 +21,7 @@
     header("Location: ../officer.php?error=passwordnotmatched&uid=".$username);
     exit();
   } else{
-    $sql="SELECT Officer_uname FROM officer WHERE Officer_uname=?";
+    $sql="SELECT Officer_uname FROM Officer WHERE Officer_uname=?";
     $stmt=mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt,$sql)){
         header("Location: ../officer.php?error=sqlerror");
@@ -36,7 +36,7 @@
                     exit();
                 }
                 else{
-                  $sql1="INSERT INTO officer (Officer_uname, Officer_pwd, First_name, Last_name, Title, Date_of_birth) VALUES (?,?,?,?,?,?) ";
+                  $sql1="INSERT INTO Officer (Officer_uname, Officer_pwd, First_name, Last_name, Title, Date_of_birth) VALUES (?,?,?,?,?,?) ";
                           $stmt1=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt1,$sql1)){
                               header("Location: ../officer.php?error=sqlerror");
@@ -50,14 +50,14 @@
           
                           }
                            //getting the officer id of the officer just added:
-                            $sql="SELECT Officer_id FROM officer ORDER BY Officer_id DESC LIMIT 1 ";
+                            $sql="SELECT Officer_id FROM Officer ORDER BY Officer_id DESC LIMIT 1 ";
                              $result=mysqli_query($conn,$sql);
                               $officer_id=mysqli_fetch_row($result);
                               
 
 
 
-                          $sql2="INSERT INTO officer_phone(oficer_phone,officer_id ) VALUES (?,?) ";
+                          $sql2="INSERT INTO Officer_phone(Officer_phone,Officer_id ) VALUES (?,?) ";
                           $stmt2=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt2,$sql2)){
                               header("Location: ../officer.php?error=sqlerror");

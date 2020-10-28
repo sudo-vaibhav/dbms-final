@@ -11,7 +11,7 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT * FROM against;";
+    $sql="SELECT * FROM Against;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
     if($resultCheck > 0){?>

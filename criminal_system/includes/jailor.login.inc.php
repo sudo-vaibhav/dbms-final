@@ -8,7 +8,7 @@ if(isset($_POST['jailor_login-submit'])){
         header("Location: ../signin-jailor.php?error=emptyFields");
         exit();
     }else{
-        $sql="SELECT Jailor_uname,Jailor_pwd FROM jailor WHERE Jailor_uname=?; ";
+        $sql="SELECT Jailor_uname,Jailor_pwd FROM Jailor WHERE Jailor_uname=?; ";
         $stmt=mysqli_stmt_init($conn);
         
         if(!mysqli_stmt_prepare($stmt,$sql)){

@@ -3,7 +3,9 @@
 $servername="localhost";
 $dBUsername="root";
 $dBPassword="";
-$dBName="criminal_system";
+//$dBName="criminal_system";
+$dBName="criminal_system_db";
+
 $conn=mysqli_connect($servername,$dBUsername,$dBPassword,$dBName);
 //if the connection doesnt work:
 if(!$conn){

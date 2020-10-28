@@ -11,7 +11,7 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT F.Fir_no,F.Description,F.Fir_date,F.Case_Type,F.Officer_id , A.Prisoner_id FROM fir as F INNER JOIN against as A ON F.Fir_no=A.Fir_no ;";
+    $sql="SELECT F.Fir_no,F.Description,F.Fir_date,F.Case_Type,F.Officer_id , A.Prisoner_id FROM Fir as F INNER JOIN Against as A ON F.Fir_no=A.Fir_no ;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
     if($resultCheck > 0){?>

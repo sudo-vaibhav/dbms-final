@@ -11,8 +11,8 @@
 
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
-    $sql="SELECT O.Officer_id,O.First_name,O.Last_name,O.Title,O.Date_of_birth,OP.oficer_phone FROM 
-    officer as O INNER JOIN  officer_phone as OP ON O.Officer_id=OP.officer_id;";
+    $sql="SELECT O.Officer_id,O.First_name,O.Last_name,O.Title,O.Date_of_birth,OP.Officer_phone FROM 
+    Officer as O INNER JOIN  Officer_phone as OP ON O.Officer_id=OP.Officer_id;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
 /*
@@ -54,7 +54,7 @@
                 <td class="border px-4 py-2"><?php echo$row['Last_name']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Title']."<br>";?></td>
                 <td class="border px-4 py-2"><?php echo$row['Date_of_birth']."<br>";?></td>
-                <td class="border px-4 py-2"><?php echo$row['oficer_phone']."<br>";?></td>
+                <td class="border px-4 py-2"><?php echo$row['Officer_phone']."<br>";?></td>
               </tr>
              
        
