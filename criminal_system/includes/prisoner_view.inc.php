@@ -1,5 +1,5 @@
 <?php
-    require '../header.php';
+    require './header_jp.inc.php';
     if(isset($_SESSION['userUidOfficer'] )||isset( $_SESSION['userUidJailor'])){
 
     include_once './dbh.inc.php';

@@ -5,6 +5,7 @@
       $f_name=$_POST['f_name'];
       $l_name=$_POST['l_name'];
       $mob_number=$_POST['mob_number'];
+      $mob_number1=$_POST['mob_number1'];
       $username=$_POST['username'];
       $password=$_POST['password'];
       $cfmpassword=$_POST['cfmpassword'];
@@ -105,6 +106,17 @@
                   }else{
                         mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$jailor_id[0]);
                         mysqli_stmt_execute($stmt2);
+                        // header("Location: ../successjailor.php?insert=success");
+                        //exit();
+                  }
+                  $sql4="INSERT INTO Jailor_phone (Jailor_phone,Jailor_id) VALUES (?,?)";
+                  $stmt4=mysqli_stmt_init($conn);
+                  if(!mysqli_stmt_prepare($stmt4,$sql4)){
+                          header("Location: ../jailor.php?error=sqlerror4");
+                            exit();
+                  }else{
+                        mysqli_stmt_bind_param($stmt4,"ii",$mob_number1,$jailor_id[0]);
+                        mysqli_stmt_execute($stmt4);
                         // header("Location: ../successjailor.php?insert=success");
                         //exit();
                   }

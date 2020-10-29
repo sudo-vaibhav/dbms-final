@@ -7,6 +7,7 @@
       $dob=$_POST['dob'];
       $title=$_POST['title'];
       $mob_number=$_POST['mob_number'];
+      $mob_number1=$_POST['mob_number1'];
       $username=$_POST['username'];
       $password=$_POST['password'];
       $cfmpassword=$_POST['cfmpassword'];
@@ -66,6 +67,21 @@
                               
                               mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$officer_id[0]);
                               mysqli_stmt_execute($stmt2);
+                              header("Location: ../successofficer.php?insert=success");
+                              exit();
+          
+                          }
+
+                          
+                          $sql3="INSERT INTO Officer_phone(Officer_phone,Officer_id ) VALUES (?,?) ";
+                          $stmt3=mysqli_stmt_init($conn);
+                          if(!mysqli_stmt_prepare($stmt3,$sql3)){
+                              header("Location: ../officer.php?error=sqlerror");
+                              exit();
+                          }else{
+                              
+                              mysqli_stmt_bind_param($stmt3,"ii",$mob_number1,$officer_id[0]);
+                              mysqli_stmt_execute($stmt3);
                               header("Location: ../successofficer.php?insert=success");
                               exit();
           

@@ -43,19 +43,14 @@ session_start();
                         <ul class="flex space-x-8 text-sm font-semibold">
                             <?php
                                 if(isset($_SESSION['userUidOfficer'])){
-                                      echo'<li><a href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
-                                      <li><a href="./officer-dashboard.php" class="hover:text-indigo-500">Officer dashboard</a></li>
-                                    <li><a href="./aboutus.php" class="hover:text-indigo-500">About Us</a></li>';
+                                      echo'<li><a href="./logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
+                                      <li><a href="../officer-dashboard.php" class="hover:text-indigo-500">Officer dashboard</a></li>
+                                    <li><a href="../aboutus.php" class="hover:text-indigo-500">About Us</a></li>';
                                       
                                 }else if(isset($_SESSION['userUidJailor'])){
-                                    echo'<li><a href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
-                                         <li><a href="./jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
-                                         <li><a href="./aboutus.php" class="hover:text-indigo-500">About Us</a></li>';
-                                }else{
-                                    echo'<li><a href="./aboutus.php" class="hover:text-indigo-500">About Us</a></li>';
-                                    echo'<li><a href="./signin-officer.php" class="hover:text-indigo-500">Officer Login</a></li>';
-                                    echo'<li><a href="./signin-jailor.php" class="hover:text-indigo-500">Jailor Login</a></li>';
-
+                                    echo'<li><a href="./logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
+                                         <li><a href="../jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
+                                         <li><a href="../aboutus.php" class="hover:text-indigo-500">About Us</a></li>';
                                 }
                             
                             ?>
@@ -98,21 +93,15 @@ session_start();
             <ul class="divide-y">
             <?php
                                 if(isset($_SESSION['userUidOfficer'])){
-                                      echo'<li><a class="my-4 inline-block active font-bold" href="includes/logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
-                                      <li><a class="my-4 inline-block active font-bold" href="./officer-dashboard.php" class="hover:text-indigo-500">Officer dasboard</a></li>
-                                    <li><a class="my-4 inline-block active font-bold" href="#" class="hover:text-indigo-500">Aboutus</a></li>';
+                                      echo'<li><a class="my-4 inline-block active font-bold" href="./logout.inc.php?logout=officer" class="hover:text-indigo-500">Logout</a></li>
+                                      <li><a class="my-4 inline-block active font-bold" href="../officer-dashboard.php" class="hover:text-indigo-500">Officer dashboard</a></li>
+                                    <li><a class="my-4 inline-block active font-bold"  href="../aboutus.php" class="hover:text-indigo-500">Aboutus</a></li>';
                                       
                                 }else if(isset($_SESSION['userUidJailor'])){
-                                    echo'<li><a class="my-4 inline-block active font-bold" href="includes/logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
-                                    <li><a class="my-4 inline-block active font-bold" href="./jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
-                                  <li><a href="./aboutus.php" class="hover:text-indigo-500">Aboutus</a></li>';
-                                }else{
-                                    echo'<li><a class="my-4 inline-block active font-bold" href="./aboutus.php" class="hover:text-indigo-500">Aboutus</a></li>';
-                                    echo'<li><a class="my-4 inline-block active font-bold" href="./signin-officer.php" class="hover:text-indigo-500">Officer Login</a></li>';
-                                    echo'<li><a class="my-4 inline-block active font-bold" href="./signin-jailor.php" class="hover:text-indigo-500">Jailor Login</a></li>';
-
-                                }
-                            
+                                    echo'<li><a class="my-4 inline-block active font-bold" href="./logout.inc.php?logout=jailor" class="hover:text-indigo-500">Logout</a></li>
+                                    <li><a class="my-4 inline-block active font-bold" href="../jailor-dashboard.php" class="hover:text-indigo-500">Jailor dashboard</a></li>
+                                  <li><a href="../aboutus.php" class="hover:text-indigo-500">Aboutus</a></li>';
+                                }              
                             ?>
             </ul>
         </div>

@@ -1,6 +1,23 @@
 <?php 
 require "./header.php";
-?>
+if(isset($_SESSION['userUidOfficer'])){
+  if(isset($_GET['error'])){
+    if($_GET['error']=="emptyfields"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
+       Empty fields!!       
+       </h2>';
+    }elseif($_GET['error']=="sqlerror"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
+      sql database connection error!!       
+      </h2>';
+    }elseif($_GET['error']=="success"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-green-600">
+      Prisoners Section has been updated successfully!!       
+      </h2>';
+    }
+  }
+
+echo'
 <form action="includes/prisoner_newsection.inc.php" method="post">
   <div class="flex flex-col h-screen">
   <section class="text-gray-700 body-font relative flex-grow">
@@ -49,7 +66,11 @@ require "./header.php";
     </div>
     </section>
     </form>
-<?php 
-  require "./footer.php";
-?>
+    ';}else{
+      header("Location: ./failure.php");
+            exit();
+    
+    }
+    require "./footer.php";
+    ?>
 </div>
