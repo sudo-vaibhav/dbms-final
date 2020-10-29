@@ -38,7 +38,11 @@
                 else{
                   $sql_select="SELECT Jailor_id,Jailor_uname,Jailor_pwd,First_name,Last_name FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id')" ;
                   $result=mysqli_query($conn,$sql_select);
-                           $Jailor_info=mysqli_fetch_row($result);
+                  $Jailor_info=mysqli_fetch_row($result);
+                  print_r($Jailor_info) ;
+                  echo $Jailor_info[0];
+                  
+                  
                   $sql_add="INSERT INTO Deleted_jailors (Jailor_id,Jailor_uname,Jailor_pwd,First_name,Last_name) VALUES(?,?,?,?,?)";
                   $stmt_add=mysqli_stmt_init($conn);
                   if(!mysqli_stmt_prepare($stmt_add,$sql_add)){
@@ -47,11 +51,12 @@
                   }else{
                       //hashing the password:
                       mysqli_stmt_bind_param($stmt_add,"issss",$Jailor_info[0],$Jailor_info[1],$Jailor_info[2],$Jailor_info[3],$Jailor_info[4]);
-                      mysqli_stmt_execute($stmt1);
+                      mysqli_stmt_execute($stmt_add);
                      // header("Location: ../fir.php?insert=success");
                       //exit();
   
                   }
+                  /*
                   $sql0="DELETE FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id' ); ";
                   //$stmt0=mysqli_stmt_init($conn);
                   $ret_val=mysqli_query($conn,$sql0);
@@ -102,7 +107,8 @@
                               exit();
           
                           }
-                  }
+                
+                        */        }
         } 
       }
  }else{
