@@ -39,8 +39,8 @@
                   $sql_select="SELECT Jailor_id,Jailor_uname,Jailor_pwd,First_name,Last_name FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id')" ;
                   $result=mysqli_query($conn,$sql_select);
                   $Jailor_info=mysqli_fetch_row($result);
-                  print_r($Jailor_info) ;
-                  echo $Jailor_info[0];
+                  //print_r($Jailor_info) ;
+                  //echo $Jailor_info[0];
                   
                   
                   $sql_add="INSERT INTO Deleted_jailors (Jailor_id,Jailor_uname,Jailor_pwd,First_name,Last_name) VALUES(?,?,?,?,?)";
@@ -52,19 +52,32 @@
                       //hashing the password:
                       mysqli_stmt_bind_param($stmt_add,"issss",$Jailor_info[0],$Jailor_info[1],$Jailor_info[2],$Jailor_info[3],$Jailor_info[4]);
                       mysqli_stmt_execute($stmt_add);
-                     // header("Location: ../fir.php?insert=success");
+                      //header("Location: ../jailor.php?insert=success");
                       //exit();
   
                   }
-                  /*
-                  $sql0="DELETE FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id' ); ";
-                  //$stmt0=mysqli_stmt_init($conn);
-                  $ret_val=mysqli_query($conn,$sql0);
-                  echo $ret_val;
+                  $sql_disable1="ALTER TABLE Section DISABLE KEYS ";
+                  if(!mysqli_query($conn,$sql_disable1)){
+                    header("Location: ../jailor.php?error=sqlerror1");
+                    exit();
+                  }
+                  $sql_disable2="ALTER TABLE Jailor_phone DISABLE KEYS ";
+                  if(!mysqli_query($conn,$sql_disable2)){
+                    header("Location: ../jailor.php?error=sqlerror11");
+                    exit();
+                  }
+                   
+                  $sql0=" DELETE FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id' ); ";
+                  if(!mysqli_query($conn,$sql0)){
+                    header("Location: ../jailor.php?error=sqlerror2");
+                    exit();
+                 }
+                  
+                  
                   $sql1="INSERT INTO Jailor (Jailor_uname, Jailor_pwd, First_name, Last_name) VALUES (?,?,?,?) ";
                           $stmt1=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt1,$sql1)){
-                              header("Location: ../jailor.php?error=sqlerror");
+                              header("Location: ../jailor.php?error=sqlerror3");
                               exit();
                           }else{
                               //hashing the password:
@@ -75,40 +88,50 @@
           
                           }
                           //getting the jailor id of the officer just added:
-                          $sql="SELECT Jailor_id FROM Jailor ORDER BY Jailor_id DESC LIMIT 1 ";
-                          $result=mysqli_query($conn,$sql);
-                           $jailor_id=mysqli_fetch_row($result);
+                  $sql="SELECT Jailor_id FROM Jailor ORDER BY Jailor_id DESC LIMIT 1 ";
+                  $result=mysqli_query($conn,$sql);
+                  $jailor_id=mysqli_fetch_row($result);
 
-                          $sql2="INSERT INTO Jailor_phone (Jailor_phone,Jailor_id) VALUES (?,?)";
-                          $stmt2=mysqli_stmt_init($conn);
-                          if(!mysqli_stmt_prepare($stmt2,$sql2)){
-                              header("Location: ../jailor.php?error=sqlerror");
-                              exit();
-
-                          
-                          }else{
+                  $sql2="INSERT INTO Jailor_phone (Jailor_phone,Jailor_id) VALUES (?,?)";
+                  $stmt2=mysqli_stmt_init($conn);
+                  if(!mysqli_stmt_prepare($stmt2,$sql2)){
+                          header("Location: ../jailor.php?error=sqlerror4");
+                            exit();
+                  }else{
                               mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$jailor_id[0]);
                               mysqli_stmt_execute($stmt2);
-                              header("Location: ../successjailor.php?insert=success");
-                              exit();
+                             // header("Location: ../successjailor.php?insert=success");
+                              //exit();
           
                           }
-                          $sql3="INSERT INTO Section (Section_id,Section_name,Jailor_id) VALUES (?,?,?)";
-                          $stmt3=mysqli_stmt_init($conn);
-                          if(!mysqli_stmt_prepare($stmt3,$sql3)){
-                              header("Location: ../jailor.php?error=sqlerror");
-                              exit();
-
-                          
-                          }else{
+                  $sql3="INSERT INTO Section (Section_id,Section_name,Jailor_id) VALUES (?,?,?)";
+                  $stmt3=mysqli_stmt_init($conn);
+                  if(!mysqli_stmt_prepare($stmt3,$sql3)){
+                     header("Location: ../jailor.php?error=sqlerror5");
+                      exit();
+                  }else{
                               mysqli_stmt_bind_param($stmt3,"isi",$sec_id,$sec_name,$jailor_id[0]);
                               mysqli_stmt_execute($stmt3);
-                              header("Location: ../successjailor.php?insert=success");
-                              exit();
+                              //header("Location: ../successjailor.php?insert=success");
+                              //exit();
           
-                          }
+                  }
+                  $sql_enable1="ALTER TABLE Section ENABLE KEYS; ";
+                  if(!mysqli_query($conn,$sql_enable1)){
+                    header("Location: ../jailor.php?error=sqlerror6");
+                    exit();
+                  }else{
+                    $sql_enable2="ALTER TABLE Jailor_phone ENABLE KEYS; ";
+                        mysqli_query($conn,$sql_enable2);
+                    
+                    
+                    header("Location: ../successjailor.php?insert=success");
+                    exit();
+                  }
+                }
+
                 
-                        */        }
+                
         } 
       }
  }else{
