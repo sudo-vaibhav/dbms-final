@@ -97,7 +97,7 @@
                   $sql="SELECT Jailor_id FROM Jailor ORDER BY Jailor_id DESC LIMIT 1 ";
                   $result=mysqli_query($conn,$sql);
                   $jailor_id=mysqli_fetch_row($result);
-
+                  
                   $sql2="INSERT INTO Jailor_phone (Jailor_phone,Jailor_id) VALUES (?,?)";
                   $stmt2=mysqli_stmt_init($conn);
                   if(!mysqli_stmt_prepare($stmt2,$sql2)){

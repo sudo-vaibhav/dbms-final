@@ -12,7 +12,7 @@
     //require 'header.php';
     //if(isset($_SESSION['userUidOfficer'])){
     $sql="SELECT J.Jailor_id,J.First_name,J.Last_name,JP.Jailor_phone FROM
-     Jailor as J INNER JOIN Jailor_phone as JP ON J.Jailor_id=JP.Jailor_id ;";
+     Deleted_jailors as J INNER JOIN Jailor_phone as JP ON J.Jailor_id=JP.Jailor_id ;";
     $result=mysqli_query($conn,$sql);
     $resultCheck=mysqli_num_rows($result);
 /*
