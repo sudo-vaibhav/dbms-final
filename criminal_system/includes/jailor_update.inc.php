@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['update_jailor'])){
-        require'./dbh.inc.php';
+        require './dbh.inc.php';
         $jailor_id=$_POST['jailor_id'];
         $sec_name=$_POST['section_name'];
         $sec_id=$_POST['section_id'];
@@ -29,7 +29,6 @@
         exit();
         }
     
-
 
 
 
