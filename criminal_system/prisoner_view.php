@@ -10,28 +10,42 @@
     }
     ?>
   <form action="includes/prisoner_view.inc.php" method="post">
-  <section class="text-gray-700 body-font relative">
-    
-    <div class="container text-center px-5 my-5 mx-auto">
-    <div class="flex items-center justify-center bg-gray-50 pt-12 pb-1 px-4 sm:px-6 lg:px-8">
-    
-    <div class="mt-1 relative rounded-md shadow-sm">
-            <input
-              class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
-              placeholder="Enter Section id" name="sec_id"
-            />
-            </div>
-    <div class="mt-1 relative rounded-md shadow-sm">
-
-            <button
-            name="btn" type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+  <div class="flex flex-col h-screen">
+    <section class="text-gray-700 body-font relative flex-grow">
+      <div class="container px-5 my-5 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
           >
-            Submit
-          </button>
+          View all Prisoners!
+          </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            The Officer can view all Prisoners in the Jail!
+          </p>
+        </div>
+      </div>
+      <div class="container px-5 my-5 mx-auto md:flex md:justify-center mb-6">
+      <form class="w-full max-w-sm md:items-center">
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <label class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+              Section ID
+            </label>
           </div>
-</div>
-</div>
-</section>
+          <div class="md:w-2/3">
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:outline-none focus:border-indigo-500" id="inline-full-name" type="text" placeholder="Enter the Section ID" name="sec_id">
+          </div>
+        </div>
+      </form>
+      </div>
+      <div class="p-2 w-full">
+        <button
+          class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" name="btn"
+        >
+          Submit
+        </button>
+      </div>
+      </section>
 </form>
 <?php
     //require 'header.php';
@@ -107,4 +121,5 @@
 <footer class="foot">
 <?php
  require'footer.php';?>
-</foooter>
+</footer>
+</div>
