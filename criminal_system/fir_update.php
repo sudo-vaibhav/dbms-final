@@ -18,6 +18,10 @@ if(isset($_SESSION['userUidOfficer'])){
       echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
       Prisoner removed from FIR successfully!!       
       </h2>';
+    }elseif($_GET['error']=="sameuserexistserror"){
+      echo'<h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-red-600">
+       Cannot enter duplicate values of FIR number and Prisoner ID!!       
+      </h2>';
     }
 
   }

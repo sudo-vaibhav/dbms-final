@@ -66,13 +66,18 @@
                     header("Location: ../jailor.php?error=sqlerror11");
                     exit();
                   }
-                   
+                  /* 
                   $sql0=" DELETE FROM Jailor WHERE Jailor_id=(SELECT Jailor_id FROM Section WHERE Section_id='$sec_id' ); ";
                   if(!mysqli_query($conn,$sql0)){
                     header("Location: ../jailor.php?error=sqlerror2");
                     exit();
-                 }
-                  
+                  }
+                  */
+                  $sql0=" DELETE FROM Section WHERE Section_id='$sec_id'";
+                  if(!mysqli_query($conn,$sql0)){
+                    header("Location: ../jailor.php?error=sqlerror2");
+                    exit();
+                  }
                   
                   $sql1="INSERT INTO Jailor (Jailor_uname, Jailor_pwd, First_name, Last_name) VALUES (?,?,?,?) ";
                           $stmt1=mysqli_stmt_init($conn);
@@ -98,12 +103,11 @@
                           header("Location: ../jailor.php?error=sqlerror4");
                             exit();
                   }else{
-                              mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$jailor_id[0]);
-                              mysqli_stmt_execute($stmt2);
-                             // header("Location: ../successjailor.php?insert=success");
-                              //exit();
-          
-                          }
+                        mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$jailor_id[0]);
+                        mysqli_stmt_execute($stmt2);
+                        // header("Location: ../successjailor.php?insert=success");
+                        //exit();
+                  }
                   $sql3="INSERT INTO Section (Section_id,Section_name,Jailor_id) VALUES (?,?,?)";
                   $stmt3=mysqli_stmt_init($conn);
                   if(!mysqli_stmt_prepare($stmt3,$sql3)){
