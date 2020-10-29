@@ -101,7 +101,7 @@ if(isset($_SESSION['userUidOfficer'])){
           >
           <div class="mt-1 relative rounded-md shadow-sm">
             <input
-            name="mob_number1"
+              name="mob_number1"
               class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base form-input block w-full px-3 h-10"
             />
           </div>

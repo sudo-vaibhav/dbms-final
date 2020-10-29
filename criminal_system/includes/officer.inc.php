@@ -12,7 +12,7 @@
       $password=$_POST['password'];
       $cfmpassword=$_POST['cfmpassword'];
 
-      if(empty($f_name)||empty($l_name)||empty($dob)||empty($title)||empty($mob_number)||empty($username)||empty($password)||empty($cfmpassword)){   
+      if(empty($f_name)||empty($l_name)||empty($dob)||empty($title)||empty($mob_number)||empty($username)||empty($password)||empty($cfmpassword)||empty($mob_number1)){   
         header("Location: ../officer.php?error=emptyfields");
         exit();
     } else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
@@ -37,6 +37,25 @@
                     exit();
                 }
                 else{
+                  /*
+                  $sql_disable1="ALTER TABLE Officer_phone DISABLE KEYS ";
+                  if(!mysqli_query($conn,$sql_disable1)){
+                    header("Location: ../officer.php?error=sqlerrornotdisabled");
+                    exit();
+                  }
+                  $sql_disable2="ALTER TABLE Fir DISABLE KEYS ";
+                  if(!mysqli_query($conn,$sql_disable2)){
+                    header("Location: ../officer.php?error=sqlerrornotdisabled");
+                    exit();
+                  }
+                  */
+                  /*
+                  $sql_disable1="SET FOREIGN_KEY_CHECKS=0; ";
+                  if(!mysqli_query($conn,$sql_disable1)){
+                    header("Location: ../officer.php?error=sqlerrornotdisabled");
+                    exit();
+                  }
+                  */
                   $sql1="INSERT INTO Officer (Officer_uname, Officer_pwd, First_name, Last_name, Title, Date_of_birth) VALUES (?,?,?,?,?,?) ";
                           $stmt1=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt1,$sql1)){
@@ -55,9 +74,27 @@
                              $result=mysqli_query($conn,$sql);
                               $officer_id=mysqli_fetch_row($result);
                               
+                          $sql2="INSERT INTO Officer_phone(Officer_phone,Officer_id ) VALUES ('$mob_number','$officer_id[0]') ";
+                          if(!mysqli_query($conn,$sql2)){
+                            header("Location: ../successofficer.php?insert=sqlerror");
+                            
+                            exit();
+                          }
+                         
+                          $sql3="INSERT INTO Officer_phone(Officer_phone,Officer_id ) VALUES ('$mob_number1','$officer_id[0]') ";
+                         if(! mysqli_query($conn,$sql3)){
+                          header("Location: ../successofficer.php?insert=sqlerror");
+                          exit();
+                         }else{
+                          header("Location: ../successofficer.php?insert=success");
+                          exit();
+                         }
 
 
+                          
 
+
+                          /*
                           $sql2="INSERT INTO Officer_phone(Officer_phone,Officer_id ) VALUES (?,?) ";
                           $stmt2=mysqli_stmt_init($conn);
                           if(!mysqli_stmt_prepare($stmt2,$sql2)){
@@ -65,7 +102,7 @@
                               exit();
                           }else{
                               
-                              mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$officer_id[0]);
+                              mysqli_stmt_bind_param($stmt2,"si",$mob_number,$officer_id[0]);
                               mysqli_stmt_execute($stmt2);
                               header("Location: ../successofficer.php?insert=success");
                               exit();
@@ -80,13 +117,33 @@
                               exit();
                           }else{
                               
-                              mysqli_stmt_bind_param($stmt3,"ii",$mob_number1,$officer_id[0]);
+                              mysqli_stmt_bind_param($stmt3,"si",$mob_number1,$officer_id[0]);
                               mysqli_stmt_execute($stmt3);
                               header("Location: ../successofficer.php?insert=success");
                               exit();
           
                           }
+                          
+                          $sql_enable1="SET FOREIGN_KEY_CHECKS=1; ";
+                  if(!mysqli_query($conn,$sql_enable1)){
+                    header("Location: ../officer.php?error=sqlerrornotdisabled");
+                    exit();
                   }
+*/
+                  /*
+                          $sql_enable1="ALTER TABLE Officer_phone ENABLE KEYS";
+                          if(!mysqli_query($conn,$sql_enable1)){
+                            header("Location: ../officer.php?error=sqlerror6");
+                            exit();
+                          }else{
+                            $sql_enable2="ALTER TABLE Fir ENABLE KEYS";
+                            mysqli_query($conn,$sql_enable2);
+                            header("Location: ../successofficer.php?insert=success");
+                            exit();
+                          }
+                          */
+                  
+                        }
         } 
       }
  }else{

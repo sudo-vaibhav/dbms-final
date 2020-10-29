@@ -26,7 +26,7 @@
 
   <section class="text-gray-700 body-font relative">
   <h1 class="text-3xl text-center">
-            Jailors present
+            Jailors removed
         </h1> 
     <div class="container text-center px-5 my-5 mx-auto">
         <div class="flex items-center justify-center bg-gray-50 pt-12 pb-56 px-4 sm:px-6 lg:px-8">

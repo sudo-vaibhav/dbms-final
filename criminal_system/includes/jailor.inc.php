@@ -74,7 +74,8 @@
                     exit();
                   }
                   */
-                  $sql0=" DELETE FROM Section WHERE Section_id='$sec_id'";
+                  
+                  $sql0=" DELETE FROM Section WHERE Section_id='$sec_id;'";
                   if(!mysqli_query($conn,$sql0)){
                     header("Location: ../jailor.php?error=sqlerror2");
                     exit();
@@ -104,7 +105,7 @@
                           header("Location: ../jailor.php?error=sqlerror4");
                             exit();
                   }else{
-                        mysqli_stmt_bind_param($stmt2,"ii",$mob_number,$jailor_id[0]);
+                        mysqli_stmt_bind_param($stmt2,"si",$mob_number,$jailor_id[0]);
                         mysqli_stmt_execute($stmt2);
                         // header("Location: ../successjailor.php?insert=success");
                         //exit();
@@ -115,7 +116,7 @@
                           header("Location: ../jailor.php?error=sqlerror4");
                             exit();
                   }else{
-                        mysqli_stmt_bind_param($stmt4,"ii",$mob_number1,$jailor_id[0]);
+                        mysqli_stmt_bind_param($stmt4,"si",$mob_number1,$jailor_id[0]);
                         mysqli_stmt_execute($stmt4);
                         // header("Location: ../successjailor.php?insert=success");
                         //exit();
