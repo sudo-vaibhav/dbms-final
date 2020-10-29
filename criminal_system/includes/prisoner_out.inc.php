@@ -8,7 +8,7 @@
             exit();
         }else{
           $sql1="UPDATE Prisoner SET Status_inout='OUT' WHERE Prisoner_id='$prisoner_id' ";
-          if(!mysqli_query($conn,$sql)){
+          if(!mysqli_query($conn,$sql1)){
             header("Location: ../prisoner_out.php?error=sqlerror");
             exit();
         }else{
